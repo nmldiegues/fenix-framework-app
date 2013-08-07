@@ -9,9 +9,11 @@ import pt.ist.fenixframework.FenixFramework;
  */
 public abstract class AbstractRemoteAction implements Action {
 
+	@Atomic
     @Override
     public final String executeLocal() throws Exception {
-        return String.valueOf(FenixFramework.sendRequest(toNetworkString(), localityHint(), "server", true));
+        //return String.valueOf(FenixFramework.sendRequest(toNetworkString(), localityHint(), "server", true));
+    	return executeTransaction();
     }
 
     @Atomic

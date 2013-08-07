@@ -29,7 +29,7 @@
                 <version>${version.fenix-framework}</version>
                 <configuration>
                     <!-- use infinispan backend for running tests -->
-                    <codeGeneratorClassName>pt.ist.fenixframework.backend.infinispan.InfinispanCodeGenerator
+                    <codeGeneratorClassName>pt.ist.fenixframework.backend.ogm.OgmCodeGenerator
                     </codeGeneratorClassName>
                     <params>
                         <ptIstTxIntrospectorEnable>false</ptIstTxIntrospectorEnable>
@@ -112,6 +112,11 @@
         <dependency>
             <groupId>pt.ist</groupId>
             <artifactId>fenix-framework-backend-infinispan</artifactId>
+            <version>${version.fenix-framework}</version>
+        </dependency>
+        <dependency>
+            <groupId>pt.ist</groupId>
+            <artifactId>fenix-framework-backend-ogm</artifactId>
             <version>${version.fenix-framework}</version>
         </dependency>
         <dependency>

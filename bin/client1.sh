@@ -40,7 +40,7 @@ for jar in `ls ${TARGET_DIR}/dependency/*.jar`; do
 done
 
 
-#CMD="java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=19999,suspend=y $D_VARS -cp $CP $CLASS"
-CMD="java $D_VARS -cp $CP $CLASS"
+CMD="java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=19999,suspend=y $D_VARS -cp $CP $CLASS"
+#CMD="java $D_VARS -cp $CP $CLASS"
 #echo $CMD
 eval $CMD

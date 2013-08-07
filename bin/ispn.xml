@@ -51,7 +51,7 @@
                     timeout="240000"/>
         </clustering>
         <dataPlacement
-                enabled="true"
+                enabled="false"
                 objectLookupFactory="org.infinispan.dataplacement.hm.HashMapObjectLookupFactory"
                 maxNumberOfKeysToRequest="1000">
         </dataPlacement>
@@ -59,7 +59,7 @@
                 enabled="true"
                 versioningScheme="GMU"/>
         <customInterceptors>
-            <interceptor index="0" class="org.infinispan.distribution.wrappers.CustomStatsInterceptor" />
+            <!--  interceptor index="0" class="org.infinispan.distribution.wrappers.CustomStatsInterceptor" /-->
             <!--interceptor index="1" class="org.infinispan.stats.topK.StreamLibInterceptor" /-->
         </customInterceptors>
     </default>

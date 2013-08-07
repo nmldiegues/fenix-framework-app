@@ -35,7 +35,6 @@ public class ServerMain {
             }
 
         }
-        init();
         populateIfNeeded();
         ActionManager actionManager = new ActionManager();
         FenixFramework.registerReceiver(new Worker(actionManager));
@@ -60,7 +59,7 @@ public class ServerMain {
         System.exit(0);
     }
 
-    private static void populateIfNeeded() {
+    static void populateIfNeeded() {
         if (!shouldPopulate()) {
             return;
         }
@@ -78,8 +77,7 @@ public class ServerMain {
         ffLogger.setLevel(oldFFLevel);
     }
 
-    @Atomic
-    private static void init() {
+    static void init() {
         DomainRoot domainRoot = FenixFramework.getDomainRoot();
         if (domainRoot.getApplication() == null) {
             domainRoot.setApplication(new Application());
@@ -88,6 +86,11 @@ public class ServerMain {
 
     @Atomic
     private static boolean shouldPopulate() {
+    	return populateInternal();
+    }
+    
+    private static boolean populateInternal() {
+    	init();
         Application application = FenixFramework.getDomainRoot().getApplication();
         if (application.getPopulated()) {
             return false;
